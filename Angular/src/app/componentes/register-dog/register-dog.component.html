@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(255, 255, 255, 0);">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+       
+      </ul>
+    
+    </div>
+  </nav>
+  
+  
+  <div class="background text-center">
+  
+    <div class="card" style="width: 500px;">
+      <div class="card-section border rounded p-3">
+        <div class="card-header-first rounded pb-5">
+          <div class="card-header-title text-white pt-3"> <img src="assets/mcDogo.png" width="100px"></div>
+        </div>
+        <div class="card-body text-center">
+            <h1 class="h3 mb-3 font-weight-normal">Registra a tu perro</h1>
+            <form
+            class="form-signin animated fadeIn"
+            autocomplete="on"
+            #f2="ngForm" (ngSubmit)='cargarImagen(f2)'
+            >
+          <input
+          type="text"
+          class="form-control mb-2 shadow"
+          placeholder="Nombre de la mascota"
+          #nombrePerro="ngModel"
+          name="nombrePerro"
+          [(ngModel)] = "perro.nombre"
+
+          />
+          <div class="container mt-5">
+            <h5>Insertar imagen</h5>
+            <input type="file" style="margin-left: -45px;" id="fileIn" (change)="setFile($event)">
+            <button class="btn btn-danger" style="width: 100%; margin-top: 50px; margin-bottom: 60px;" 
+            >Guardar</button>
+          </div>
+       </form>
+  
+              </div>
+            </div>
+          </div>
+  </div>
+  

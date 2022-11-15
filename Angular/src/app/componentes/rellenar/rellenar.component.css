@@ -1,0 +1,46 @@
+.background {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+   
+   
+  .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+   
+  .form-signin .form-control {
+    height: 45px;
+  }
+
+  /*tarjeta 1*/
+.card-header-first {
+  margin-top: -40px;
+  height: 120px;
+  background: linear-gradient(-90deg, #8f8f8f, #c4c4c4);
+  box-shadow: 1px 5px 15px #a2a2a2;
+}
+
+
+
+.card-header-third span i:hover,
+.card-section-third span i:hover {
+  box-shadow: 1px 1px 15px #000;
+}
+
+/*efecto shadows para todas las tarjetas*/
+.card-section {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+}
+
+/*Para el efecto sombra al pasar por encima el mouse*/
+.card-section:hover {
+  box-shadow: 1px 1px 20px red;
+}

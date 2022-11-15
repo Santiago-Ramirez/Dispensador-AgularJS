@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+
+<div class="background text-center" @mostrarPrestasAnimation>
+
+   <div class="card" style="width: 650px;" *ngFor="let perro of perros">
+      <img class="card-img-top" [src]="'http://3.18.112.81/getimgperro?nombre=' + perro.nombre" style="border-radius: 8px;" width="200em" height="350em" >
+
+
+       <div class class="card-body text-center">
+         <h4 >Bienvenido a tu panel de dispensador de croquetas</h4>
+         <h5>Arriba encontraras las opciones para controlar el dispensador de</h5>
+         <h4 style="text-transform: uppercase; color: red;" [innerHTML]="perro.nombre"></h4>
+       
+       </div>
+
+   </div>
+</div>
+

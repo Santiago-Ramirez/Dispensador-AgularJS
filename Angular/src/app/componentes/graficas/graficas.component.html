@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>>
+
+<div class="background text-center" @mostrarPrestasAnimation>
+
+  <div class="card text-white mb-3">
+    <div class="card-section border rounded p-3">
+      <div class="card-header-first rounded pb-5">
+        <img src="assets/agua.png" width="100px">
+      </div>
+
+
+      <div class="card-body shadow" >
+        <h2 class="text-danger">Grafica Agua</h2>
+        <div class="row">
+          <div class="col">
+            <div class="container text-center mt-5">
+
+
+            </div>
+            
+          </div>
+
+
+          <div class="col">
+            <div class="container text-center mt-5">
+              
+              <ngx-charts-bar-vertical
+              [view]="view"
+              [scheme]="colorScheme"
+              [results]="single"
+              [gradient]="gradient"
+              [xAxis]="showXAxis"
+              [yAxis]="showYAxis"
+              [legend]="showLegend"
+              [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel"
+              [xAxisLabel]="xAxisLabel"
+              [yAxisLabel]="yAxisLabel"
+              (select)="onSelect($event)">
+              
+            </ngx-charts-bar-vertical>
+              <button (click)="refrescar()">Refrescar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(255, 255, 255, 0);">
+
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+     
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" [routerLink]="['/register']">Registrate</button>
+    </form>
+  </div>
+</nav>
+
+<div class="background text-center" @mostrarPrestasAnimation>
+
+        <div class="card">
+          <div class="card-section border rounded p-3">
+            <div class="card-header-first rounded pb-5">
+              <div class="card-header-title text-white pt-3"> <img src="assets/mcDogo.png" width="100px"></div>
+            </div>
+            <div class="card-body text-center">
+
+              <form
+          class="form-signin animated fadeIn"
+          autocomplete="on"
+    [formGroup]="loginForm"
+    (ngSubmit)="login()"
+        >
+  
+          <h1 class="h3 mb-3 font-weight-normal">Iniciar sesion</h1>
+          <label class="sr-only" for="username">Correo electronico</label>
+          <input
+            type="text"
+            class="form-control mb-2 shadow"
+            id="username"
+            placeholder="Usuario"
+            formControlName="usuario"
+            [class.is-invalid]="usuarioValidate"
+
+          />
+          <label class="sr-only" for="inputPassword">Contraseña</label>
+          <input
+            type="password"
+            class="form-control mb-4 shadow"
+            id="inputPassword"
+            placeholder="Contraseña"
+            formControlName="password"
+            [class.is-invalid]="passwordValidate"
+
+      
+          />
+          <div class="mb-2" style="text-decoration: none;"> No tienes una cuenta.<a style="text-decoration: none;" [routerLink]="['/register']"> Registrate aquí</a> </div>
+          <button type="submit" class="btn btn-lg btn-danger btn-block mb-2 mt-4 shadow">
+            Iniciar sesion
+          </button>
+        </form>
+        
+            </div>
+          </div>
+        </div>
+</div>
+
+

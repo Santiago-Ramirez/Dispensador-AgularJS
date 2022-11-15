@@ -1,0 +1,102 @@
+<app-navbar></app-navbar>
+
+<div @entrada2PrestasAnimation class="background text-center" >
+        <div class="card" style="width: 600px;">
+          <div class="card-section border rounded p-3">
+            <div class="card-header-first rounded pb-5">
+              <div class="card-header-title text-white pt-3"> <img src="assets/agua.png" width="100px"></div>
+            </div>
+            <div class="card-body text-center">
+              <h1 >Rellenar agua</h1>
+              <button type="submit" class="btn btn btn-danger mb-4 mt-2 shadow" [routerLink]="['/rellenarAgua']" style="width: 100px;">Rellenar</button>
+               <h1 >Porcentaje actual</h1>
+              <button type="submit" class="btn btn btn-danger mb-2 mt-2 shadow" (click)="mostrarModalInfo2(content2)" style="width: 100px;">Ver</button>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <ng-template #content2 let-modal>
+    <div class="modal-content">
+      <div class="modal-header btn-danger shadow">
+        <h5 class="modal-title">Opciones</h5>
+      </div>
+      <div class="modal-body">
+        <div class="card text-white mb-3">
+          <div class="card-body shadow" >
+            <div class="row">
+              <div class="col">
+                <img src="assets/tp1.png" width="50px">
+                <br>
+                <div class="container text-center mt-5">
+                  <div class="card border-danger shadow">
+                    <div class="card-body" style="color: red;" >
+                      La temperatura del agua es: {{distance | json }}°C
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="vertical-line bg-danger" style="height: 260px;"> </div>
+                <div class="col">
+                <img src="assets/tp2.png" width="50px">
+                <br>
+                <div class="container text-center mt-5" >
+                  <div class="card border-danger shadow">
+                    <div class="card-body" style="color: red;">
+                      La cantidad de agua que hay es: {{agualvl | json}}%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+
+      <div class="modal-footer shadow">
+        <img class="btn" src="assets/back.png" style="width: 75px;" (click)="modal.close()">
+      </div>
+    </div>
+  </ng-template>
+
+
+  <ng-template #content let-modal>
+    <div class="modal-content">
+      <div class="modal-header btn-danger shadow">
+        <h5 class="modal-title">Opciones</h5>
+      </div>
+      <div class="modal-body">
+        <div class="card text-white mb-3">
+          <div class="card-body shadow">
+            <div class="row">
+              <div class="col">
+                <img src="assets/tp1.png" width="50px">
+                <br>
+                <div class="container text-center mt-4">
+                  <button type="submit" class="btn btn btn-outline-danger mb-2 mt-2 shadow" style="height: 100px;"(click)="valueFive()" >Controlar la temperatura</button>
+                </div>
+                <!-- <h5 class="mt-5" style="color: red;" >Temperatura:</h5> -->
+              </div>
+              <div class="vertical-line bg-danger" style="height: 260px;"> </div>
+                <div class="col">
+                <img src="assets/tp2.png" width="50px">+
+                <br>
+                <div class="container text-center mt-5">
+                  <button type="submit" class="btn btn btn-danger mb-2 mt-2 shadow" style="width: 100px;" (click)="valueOne()">25%</button>
+                  <button type="submit" class="btn btn btn-danger mb-2 mt-2 shadow ml-1" style="width: 100px;" (click)="valueTwo()">50%</button>
+                  <button type="submit" class="btn btn btn-danger mb-2 mt-2 shadow ml-1 mr-1" style="width: 100px;" (click)="valueThree()">75%</button>
+                  <button type="submit" class="btn btn btn-danger mb-2 mt-2 shadow" style="width: 100px;" (click)="valueFour()">100%</button>
+                </div>
+                    <!-- <h5 style="color: red; margin-top: 90px;" >Cantidad:</h5> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer shadow">
+        <img class="btn" src="assets/back.png" style="width: 75px;" (click)="modal.close()">
+      </div>
+    </div>
+  </ng-template>

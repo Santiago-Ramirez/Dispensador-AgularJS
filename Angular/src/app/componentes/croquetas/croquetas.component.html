@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+
+
+
+    <div class="background text-center" @entradaPrestasAnimation>
+      <div class="card" style="width: 600px;">
+        <div class="card-section border rounded p-3">
+          <div class="card-header-first rounded pb-5">
+            <div class="card-header-title text-white pt-3"> <img src="assets/croquetas.png" width="150px"></div>
+          </div>
+          <div class="card-body text-center">
+            <h1>Rellenar croquetas</h1>
+            <button type="submit" class="btn btn btn-danger mb-4 mt-2 shadow" (click)="mostrarModalInfo()"
+              style="width: 100px;">Rellenar</button>
+            <!-- <h1>Porcentaje actual</h1>
+            <button type="submit" class="btn btn btn-danger mb-2 mt-2 shadow" (click)="mostrarModalInfo2(contact)" style="width: 100px;">Ver</button> -->
+          </div>
+        </div>  
+      </div>
+    </div>
+
+
+<ng-template #myModalInfo let-modal>
+  <div class="modal-content">
+    <div class="modal-header btn-danger shadow">
+      <h5 class="modal-title">Rellenar croquetas</h5>
+
+    </div>
+    <div class="modal-body">
+      <div class="card text-white mb-3">
+        <div class="card-body shadow">
+          <div class="row">
+            <div class="col">
+              <img class="mb-4" src="assets/croquetas2.png" style="width: 50px;">
+              <p class="mt-4" style="color: red;">Selecciona la cantidad de croquetas que deseas servir</p>
+              <br>
+              <button type="submit" class="btn btn btn-danger mb-2 mt-2 shadow" style="width: 100px;" (click)="valueOne()">25%</button>
+              <button type="submit" class="btn btn btn-danger mb-2 mt-2 shadow ml-1" style="width: 100px;" (click)="valueTwo()">50%</button>
+              <button type="submit" class="btn btn btn-danger mb-2 mt-2 shadow ml-1 mr-1" style="width: 100px;" (click)="valueThree()">75%</button>
+              <button type="submit" class="btn btn btn-danger mb-2 mt-2 shadow" style="width: 100px;" (click)="valueFour()">100%</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer shadow">
+      <img class="btn" src="assets/back.png" style="width: 75px;" (click)="modal.close()">
+    </div>
+
+  </div>
+</ng-template>
+
+<ng-template #contact let-modal>
+  <div class="modal-content">
+    <div class="modal-header btn-danger shadow">
+      <h5 class="modal-title">Estado de croquetas</h5>
+    </div>
+    <div class="modal-body">
+      <div class="card text-white mb-3">
+        <div class="card-body shadow">
+          <div class="row">
+            <div class="col">
+              <p class="centrado">
+                <img src="assets/hueso.png">
+              </p>
+
+              <h4 style="color: red;">La cantidad de las croquetas es: {{CroquetasLeveeel | json}}%</h4>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer text-center">
+      <img class="btn" src="assets/back.png" style="width: 75px;" (click)="modal.close()">
+
+    </div>
+  </div>
+</ng-template>

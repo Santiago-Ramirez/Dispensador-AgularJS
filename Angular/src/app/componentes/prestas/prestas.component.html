@@ -1,0 +1,121 @@
+<app-navbar></app-navbar>
+
+
+<div class="background" @entradaPrestasAnimation>
+  <div class="card text-white mb-3" style="width: 800px; height: 600px;">
+      <div class="card-header bg-danger">
+        <img src="assets/settings.png" width="30px"> Configuración
+      </div>
+      <div class="card-body shadow">
+        <div class="row">
+
+          <div class="col">
+            <div class="row">
+              <div class="col-4">
+                <div class="list-group" id="list-tab" role="tablist">
+                  <a class="list-group-item list-group-item-action bg-danger text-white" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Editar usuario</a>
+                  <br><a class="list-group-item list-group-item-action bg-danger text-white" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Editar Mascota</a>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list"><div class="col">
+                    <h3 style="color: red;">Editar usuario</h3>
+                    <br>
+                    <div class="container text-center mt-4">
+                      <form
+                          class="form-signin animated fadeIn"
+                          autocomplete="on"
+                          #f1="ngForm" (ngSubmit)='actualizarUsuario(f1)'
+                          >
+                      <input
+                        type="text"
+                        class="form-control mb-2 shadow"
+                        placeholder="Nombre del usuario"
+                        #nombreUsuario="ngModel"
+                        name="nombreUsuario"
+                        [(ngModel)] = "usuario.usuario"
+
+                      />
+                      <input
+                        type="password"
+                        class="form-control mb-5 shadow"
+                        placeholder="Nueva contraseña"
+                        #password="ngModel"
+                        name="password"
+                        [(ngModel)] = "usuario.password"
+                      />
+                      <button class="btn btn-danger" style="width: 100%; margin-top: 50px; margin-bottom: 60px;"
+                          >Guardar</button>
+                      </form>
+                    </div>
+
+
+                  </div>
+      </div>
+                  <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+
+                    <div class="col" style="color: black;">
+                      <h3 style="color: red;">Editar Mascota</h3>
+                      <br>
+                        <div class="container mt-4">
+
+                          <form
+                          class="form-signin animated fadeIn"
+                          autocomplete="on"
+                          #f2="ngForm" (ngSubmit)='cargarImagen(f2)'
+                          >
+                        <input
+                        type="text"
+                        class="form-control mb-2 shadow"
+                        placeholder="Nombre de la mascota"
+                        #nombrePerro="ngModel"
+                        name="nombrePerro"
+                        [(ngModel)] = "perro.nombre"
+
+                        />
+
+
+                        <div class="container mt-5">
+                          <h5>Imagen nueva</h5>
+                          <input accept="image/png,image/jpeg" type="file" id="fileIn" (change)="setFile($event)">
+                          <button class="btn btn-danger" style="width: 100%; margin-top: 50px; margin-bottom: 60px;"
+                          >Guardar</button>
+                        </div>
+                     </form>
+                      </div>
+                </div>
+                </div>
+                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list"><h1 class="text-danger">OTRA OPCION</h1></div>
+              <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+              </div>
+
+                WE VA A VALIR VERGA CON LAS GRAFICAS NO MMSSSSSS JAJA
+ 
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+      </div>
+
+
+
+
+      <!--<       PREVISUALIZAR IMAGEN
+      <div>
+      <input type="file" (change)="capturarFile($event)">
+      </div>
+      div *ngIf="previsualizacion">
+      <img [src]="previsualizacion" alt="" width="80px" height="80px">
+      </div>-->
+</div>
